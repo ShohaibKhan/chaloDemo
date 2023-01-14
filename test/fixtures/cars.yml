@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_name: MyString
+  brand: one
+  launched: false
+  launch_date: 2023-01-14 15:11:22
+
+two:
+  car_name: MyString
+  brand: two
+  launched: false
+  launch_date: 2023-01-14 15:11:22
+
+three:
+  car_name: AnotherString
+  brand: two
+  launched: false
+  launch_date: 2023-01-14 15:11:22
