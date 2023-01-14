@@ -2,8 +2,13 @@
 
 THE BID Guide to Rails Development for YourMove
 
+
 Keep in mind the following to ensure reasonable productivity - 
 
+* Deployed Environments
+  * DEV - https://oyster-app-immvc.ondigitalocean.app
+  * STAGING - TBD
+  * PROD - TBD
 * Ruby version
   * we use 3.2.0 for this project.
 
