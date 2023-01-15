@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+
+.blue-link {
+    @apply font-medium text-blue-600 dark:text-blue-500
+}
+.blue-link:hover {
+    @apply hover:underline
+}
+
+.gray-btn {
+    @apply bg-gray-600 text-white font-bold py-1 px-2 rounded
+}
+
+.gray-btn:hover {
+    @apply hover:bg-gray-700
+}
+@tailwind utilities;
+
+

@@ -37,6 +37,9 @@ jobs:
       # Add or replace database setup steps here
       - name: Set up database schema
         run: bin/rails db:schema:load
+      # Pre-compile Assets such as CSS
+      - name: Pre-compile Assets
+        run: bin/rails assets:precompile
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake

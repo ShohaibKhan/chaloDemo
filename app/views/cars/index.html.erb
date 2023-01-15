@@ -2,13 +2,25 @@
 
 <h1>Cars</h1>
 
-<div id="cars">
-  <% @cars.each do |car| %>
-    <%= render car %>
-    <p>
-      <%= link_to "Show this car", car %>
-    </p>
-  <% end %>
+<div id="cars" class="md-flex grid-cols-1">
+  <table class="table-auto ">
+    <thead class="bg-amber-400">
+      <tr>
+        <th>Make</th>
+        <th>Car</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody class="bg-amber-100">
+      <% @cars.each do |car| %>
+        <tr>
+          <td><%= car.brand.name %></td>
+          <td><%= car.car_name %></td>
+          <td><%= link_to "Show this car",  car, class: 'blue-link' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-<%= link_to "New car", new_car_path %>
+<%= link_to "New car", new_car_path, class: 'blue-link' %>
