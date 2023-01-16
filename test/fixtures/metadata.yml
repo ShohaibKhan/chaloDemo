@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  waiting_period: 2023-01-16 13:06:32
+  car: one
+  variant: one
+  pincode: one
+
+two:
+  waiting_period: 2023-01-16 13:06:32
+  car: two
+  variant: two
+  pincode: two

@@ -36,7 +36,7 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       # Add or replace database setup steps here
       - name: Set up database schema
-        run: bin/rails db:schema:load
+        run: bin/rails db:setup && bin/rails db:migrate RAILS_ENV=test
       # Pre-compile Assets such as CSS
       - name: Pre-compile Assets
         run: bin/rails assets:precompile

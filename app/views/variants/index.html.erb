@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Variants</h1>
+
+<div id="variants" class="md-flex grid-cols-1">
+  <table class="table-auto ">
+    <thead class="bg-amber-400">
+      <tr>
+        <th>Car</th>
+        <th>Variant</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody class="bg-amber-100">
+      <% @variants.each do |variant| %>
+        <tr>
+          <td><%= variant.car.car_name %></td>
+          <td><%= variant.variant %></td>
+          <td><%= link_to "Show this Variant",  variant, class: 'blue-link' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New Variant", new_variant_path, class: 'blue-link' %>

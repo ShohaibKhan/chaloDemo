@@ -77,3 +77,7 @@ gem "rubocop", "~> 1.43"
 
 gem "jsbundling-rails", "~> 1.1"
 gem "cssbundling-rails", "~> 1.1"
+
+gem "csv", "~> 3.2"
+
+gem "open-uri", "~> 0.3.0"

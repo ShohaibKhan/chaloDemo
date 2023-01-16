@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_14_094801) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_111231) do
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.integer "brand_id"
@@ -31,5 +31,35 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_094801) do
     t.index ["car_id"], name: "index_cars_on_car_id", unique: true
   end
 
+  create_table "metadata", force: :cascade do |t|
+    t.datetime "waiting_period"
+    t.integer "car_id"
+    t.integer "variant_id"
+    t.integer "pincode_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_metadata_on_car_id"
+    t.index ["pincode_id"], name: "index_metadata_on_pincode_id"
+    t.index ["variant_id"], name: "index_metadata_on_variant_id"
+  end
+
+  create_table "pincodes", force: :cascade do |t|
+    t.integer "pincode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "variants", force: :cascade do |t|
+    t.string "variant"
+    t.integer "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_variants_on_car_id"
+  end
+
   add_foreign_key "cars", "brands"
+  add_foreign_key "metadata", "cars"
+  add_foreign_key "metadata", "pincodes"
+  add_foreign_key "metadata", "variants"
+  add_foreign_key "variants", "cars"
 end

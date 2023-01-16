@@ -1,0 +1,37 @@
+<%= form_with(model: metadatum) do |form| %>
+  <% if metadatum.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(metadatum.errors.count, "error") %> prohibited this metadatum from being saved:</h2>
+
+      <ul>
+        <% metadatum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :waiting_period, style: "display: block" %>
+    <%= form.datetime_field :waiting_period %>
+  </div>
+
+  <div>
+    <%= form.label :car_id, style: "display: block" %>
+    <%= form.collection_select :car_id, Car.all, :id, :car_name %>
+  </div>
+
+  <div>
+    <%= form.label :variant_id, style: "display: block" %>
+    <%= form.collection_select :variant_id, Variant.all, :id, :variant %>
+  </div>
+
+  <div>
+    <%= form.label :pincode_id, style: "display: block" %>
+    <%= form.collection_select :pincode_id, Pincode.all, :id, :pincode %>
+  </div>
+
+  <div>
+    <%= form.submit class: "gray-btn" %>
+  </div>
+<% end %>
