@@ -24,7 +24,7 @@ csv_text = URI.open('https://chalo-assets.sgp1.cdn.digitaloceanspaces.com/assets
 csv = CSV.parse(csv_text, :headers => true)
 if Rails.env.production?
   # csv.each do |row|
-  csv.first(10000).each do |row|
+  csv.first(100).each do |row|
     Pincode.create!(row.to_hash)
   end
 else
