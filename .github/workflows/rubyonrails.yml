@@ -19,12 +19,12 @@ jobs:
         ports:
           - "5432:5432"
         env:
-          POSTGRES_DB: rails_test
-          POSTGRES_USER: rails
-          POSTGRES_PASSWORD: password
+          POSTGRES_DB: chalo_test
+          POSTGRES_USER: chalo
+          POSTGRES_PASSWORD: abc123
     env:
       RAILS_ENV: test
-      # DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      DATABASE_URL: "postgres://chalo:abc123@localhost:5432/chalo_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -35,6 +35,8 @@ jobs:
           # ruby-version: '3.2.0' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       # Add or replace database setup steps here
+      - name: Create database
+        run: bin/rails db:create
       - name: Set up database schema
         run: bin/rails db:setup && bin/rails db:migrate RAILS_ENV=test
       # Pre-compile Assets such as CSS
