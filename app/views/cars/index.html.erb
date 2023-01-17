@@ -1,17 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<li class="py-4">
+  <p style="color: green"><%= notice %></p>
+</li>
 
-<h1>Cars</h1>
+<li class="py-4">
+  <h3>Cars</h3>
+</li>
 
-<div id="cars" class="md-flex grid-cols-1">
-  <table class="table-auto ">
-    <thead class="bg-amber-400">
+<!-- More items... -->
+
+<li class="py-4">
+  <div id="cars" class="md-flex grid-cols-1 justify-items-center">
+    <table class="table-auto">
+      <thead class="bg-amber-400">
       <tr>
         <th>Make</th>
         <th>Car</th>
         <th>View</th>
       </tr>
-    </thead>
-    <tbody class="bg-amber-100">
+      </thead>
+      <tbody class="bg-amber-100">
       <% @cars.each do |car| %>
         <tr>
           <td><%= car.brand.name %></td>
@@ -19,8 +26,14 @@
           <td><%= link_to "Show this car",  car, class: 'blue-link' %></td>
         </tr>
       <% end %>
-    </tbody>
-  </table>
-</div>
+      </tbody>
+    </table>
+  </div>
+</li>
 
-<%= link_to "New car", new_car_path, class: 'blue-link' %>
+<li class="py-4">
+  <%= link_to "New car", new_car_path, class: 'blue-link' %>
+</li>
+
+
+

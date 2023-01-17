@@ -23,7 +23,9 @@
 
   <div>
     <%= form.label :variant_id, style: "display: block" %>
-    <%= form.collection_select :variant_id, Variant.all, :id, :variant %>
+    <%#= form.collection_check_boxes :variant_id, Variant.order(:variant_id), :id, :variant %>
+    <%= form.collection_select :variant_id, Variant.all.empty? ? Variant.all.map { |v| VariantWithCarName(v) } : Variant.all, :id, :variant %>
+    <%#= form.collection_select :variant_id, Variant.all.empty? ? Variant.all.map { |v| VariantWithCarName(v) } : Variant.all, :id, :variant %>
   </div>
 
   <div>

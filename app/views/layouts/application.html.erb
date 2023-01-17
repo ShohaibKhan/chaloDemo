@@ -8,10 +8,25 @@
 
     <%#= javascript_importmap_tags %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <%#= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>chalo</h1>
+      <p> plan for your next trip </p>
+    </header>
+
+    <main>
+      <ul role="list" style="list-style: none;">
+        <%= yield %>
+      </ul>
+    </main>
+
+    <footer>
+      <p>made by <a href="https://github.com/blueinsightdigital">@blueinsightdigital</a></p>
+    </footer>
   </body>
+
 </html>
