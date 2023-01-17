@@ -18,6 +18,7 @@
       <p> plan for your next trip </p>
     </header>
 
+
     <main>
       <ul role="list" style="list-style: none;">
         <%= yield %>
@@ -25,6 +26,7 @@
     </main>
 
     <footer>
+      <p><%= link_to "Cars", cars_path, class: 'blue-link' %> | <%= link_to "Variants", variants_path, class: 'blue-link' %> | <%= link_to "Waiting Periods", metadata_path, class: 'blue-link' %></p>
       <p>made by <a href="https://github.com/blueinsightdigital">@blueinsightdigital</a></p>
     </footer>
   </body>
