@@ -23,6 +23,10 @@ name: oyster-app
 region: blr
 services:
   - environment_slug: ruby-on-rails
+    envs:
+      - key: DATABASE_URL
+        scope: RUN_TIME
+        value: ${chalo_production.DATABASE_URL}
     github:
       branch: main
       deploy_on_push: true
