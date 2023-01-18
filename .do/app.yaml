@@ -4,7 +4,7 @@ alerts:
 databases:
   - cluster_name: chalo-blr1-a
     db_name: chalo_production
-    db_user: doadmin
+    db_user: pgdb
     engine: PG
     name: chalo-blr1-a
     production: true
@@ -15,10 +15,7 @@ domains:
 envs:
   - key: CHALO_APP_DATABASE_URL
     scope: RUN_AND_BUILD_TIME
-    value: postgresql://doadmin:AVNS_f4Ek38mirZiQKTQmseJ@chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com:25060/chalo_production?sslmode=require
-  - key: DATABASE_URL
-    scope: RUN_AND_BUILD_TIME
-    value: postgresql://doadmin:AVNS_f4Ek38mirZiQKTQmseJ@chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com:25060/chalo_production?sslmode=require
+    value: postgresql://pgdb:AVNS_aQ65wQ05Xs2GiCL50hB@chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com:25060/chalo_production?sslmode=require
   - key: RAILS_MASTER_KEY
     scope: RUN_AND_BUILD_TIME
     value: ba3b97ff21dcf1d4536b380f280e0c6e
@@ -38,6 +35,5 @@ services:
     name: chalo
     routes:
       - path: /
-    run_command: ./bin/rails assets:precompile && ./bin/rails db:setup && ./bin/rails
-      db:migrate && ./bin/rails server -p $PORT -e ${RAILS_ENV:-production}
+    run_command: ./bin/rails assets:precompile && ./bin/rails server -p $PORT -e ${RAILS_ENV:-production}
     source_dir: /
