@@ -26,7 +26,7 @@ services:
     envs:
       - key: DATABASE_URL
         scope: RUN_TIME
-        value: ${chalo_production.DATABASE_URL}
+        value: ${chalo-blr1-a.DATABASE_URL}
     github:
       branch: main
       deploy_on_push: true
