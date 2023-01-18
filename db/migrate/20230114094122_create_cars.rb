@@ -5,7 +5,7 @@ class CreateCars < ActiveRecord::Migration[7.0]
       t.string :car_brand
       t.boolean :launched
       t.datetime :launch_date
-      t.integer :car_id, primary_key: true
+      t.integer :car_id
 
       t.timestamps
     end

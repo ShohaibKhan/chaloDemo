@@ -29,16 +29,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_111231) do
     t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "brand_id", null: false
+    t.bigint "brand_id", null: false
     t.index ["brand_id"], name: "index_cars_on_brand_id"
     t.index ["car_id"], name: "index_cars_on_car_id", unique: true
   end
 
   create_table "metadata", force: :cascade do |t|
     t.datetime "waiting_period"
-    t.integer "car_id"
-    t.integer "variant_id"
-    t.integer "pincode_id", null: false
+    t.bigint "car_id"
+    t.bigint "variant_id"
+    t.bigint "pincode_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_id"], name: "index_metadata_on_car_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_111231) do
 
   create_table "variants", force: :cascade do |t|
     t.string "variant"
-    t.integer "car_id"
+    t.bigint "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["car_id"], name: "index_variants_on_car_id"
