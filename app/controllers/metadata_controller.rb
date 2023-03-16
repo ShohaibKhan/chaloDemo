@@ -3,9 +3,9 @@ class MetadataController < ApplicationController
 
   # GET /metadata or /metadata.json
   def index
+    
     @metadata = Metadatum.all
   end
-
   # GET /metadata/1 or /metadata/1.json
   def show
   end

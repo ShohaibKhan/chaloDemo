@@ -24,6 +24,11 @@ default: &default
 development:
   <<: *default
   database: chalo_development
+  host: localhost
+  username: postgres
+  port: 5432
+  password: Khan2khan@@
+  
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

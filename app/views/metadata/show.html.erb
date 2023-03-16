@@ -2,9 +2,13 @@
 
 <%= render @metadatum %>
 
-<div>
-  <%= link_to "Edit this metadatum", edit_metadatum_path(@metadatum), class: "blue-link" %> |
-  <%= link_to "Back to metadata", metadata_path, class: "blue-link" %>
+<%= link_to "Back to metadata", metadata_path, class: "blue-link" %>
+<br><br>
+<%# only admins can able to edit and destroy the metadetum%>
+<%if user_signed_in? && current_user.is_admin %>
+  <div>
+    <%= link_to "Edit this metadatum", edit_metadatum_path(@metadatum), class: "blue-link" %> 
 
-  <%= button_to "Destroy this metadatum", @metadatum, method: :delete, class: "gray-btn" %>
-</div>
+    <%= button_to "Destroy this metadatum", @metadatum, method: :delete, class: "gray-btn" %>
+  </div>
+<%end%>

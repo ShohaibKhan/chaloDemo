@@ -7,6 +7,7 @@ class Metadatum < ApplicationRecord
   belongs_to :car
   belongs_to :variant
   belongs_to :pincode
+
 end
 
 # class CarAssociationValidator < ActiveModel::Validator

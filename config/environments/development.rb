@@ -8,6 +8,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -67,4 +68,18 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  
+  #config for the devise gem
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :username => "khanshohaib400@gmail.com",
+  #   :password => "Khan2khan@@",
+  #   :address => "smtp.gmail.com",
+  #   :port => 587,
+  #   :authetication => :plain,
+  #   :enable_starttls_auto => true
+  # }
+
 end

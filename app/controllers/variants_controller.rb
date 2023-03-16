@@ -3,7 +3,9 @@ class VariantsController < ApplicationController
 
   # GET /variants or /variants.json
   def index
-    @variants = Variant.all
+    @q = Variant.ransack(params[:q])
+    @variants = @q.result(distinct: true)
+    #@variants = Variant.all
   end
 
   # GET /variants/1 or /variants/1.json

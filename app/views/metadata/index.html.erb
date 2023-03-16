@@ -1,30 +1,34 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Metadata</h1>
+  <p style="color: green"><%= notice %></p>
 
-<div id="metadata" class="md-flex grid-cols-1">
-  <table class="table-auto ">
-    <thead class="bg-amber-400">
-    <tr>
-      <th>Car</th>
-      <th>Variant</th>
-      <th>Pincode</th>
-      <th>Waiting Period</th>
-      <th>Show this Metadatum</th>
-    </tr>
-    </thead>
-    <tbody class="bg-amber-100">
-    <% @metadata.each do |metadatum| %>
+  <h1>Metadata</h1>
+
+  <div id="metadata" class="md-flex grid-cols-1">
+    <table class="table-auto ">
+      <thead class="bg-amber-400">
       <tr>
-        <td><%= metadatum.car.car_name %></td>
-        <td><%= metadatum.variant.variant %></td>
-        <td><%= metadatum.pincode.pincode %></td>
-        <td><%= metadatum.waiting_period %></td>
-        <td><%= link_to "Show this metadatum", metadatum, class: 'blue-link' %></td>
+        <th>Car</th>
+        <th>Variant</th>
+        <th>Pincode</th>
+        <th>Waiting Period</th>
+        <th>Show this Metadatum</th>
       </tr>
-    <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody class="bg-amber-100">
+      <% @metadata.each do |metadatum| %>
+        <tr>
+          <td><%= metadatum.car.car_name %></td>
+          <td><%= metadatum.variant.variant %></td>
+          <td><%= metadatum.pincode.pincode %></td>
+          <td><%= metadatum.waiting_period %></td>
+          <td><%= link_to "Show this metadatum", metadatum, class: 'blue-link' %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 
-<%= link_to "New metadatum", new_metadatum_path %>
+<%# only admin user can able to add new metadatum%>
+<%if user_signed_in? && current_user.is_admin %>
+  <%= link_to "New metadatum", new_metadatum_path %>
+<%end%>
