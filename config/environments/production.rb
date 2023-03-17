@@ -94,7 +94,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #config for the devise production
-  config.action_mailer.default_url_options = { host: 'chalo.digital'}
+  config.action_mailer.default_url_options = { host: 'chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com', port: 25060}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
