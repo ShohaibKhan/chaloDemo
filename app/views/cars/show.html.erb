@@ -1,9 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<%if user_signed_in?%>
+  <p style="color: green"><%= notice %></p>
 
-<%= render @car %>
-<br>
-<%= link_to "Back to cars", cars_path, class: "blue-link" %>
-<br><br>
+  <%= render @car %>
+  <br>
+  <%= link_to "Back to cars", cars_path, class: "blue-link" %>
+  <br><br>
+<%end%>
 <%# only admins can able to edit and destroy the car%>
 <%if user_signed_in? && current_user.is_admin %>
   <div>

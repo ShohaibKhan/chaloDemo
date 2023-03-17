@@ -1,8 +1,10 @@
-<h1>Editing variant</h1>
+<%if user_signed_in? && current_user.is_admin %>
+  <h1>Editing variant</h1>
 
-<%= render "form", variant: @variant %>
+  <%= render "form", variant: @variant %>
 
-<br>
+  <br>
+<%end%>
 
 <div>
   <%= link_to "Show this Variant", @variant %> |
