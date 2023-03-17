@@ -1,8 +1,10 @@
-<h1>New Variant</h1>
+<%if user_signed_in? && current_user.is_admin %>
+  <h1>New Variant</h1>
 
-<%= render "form", variant: @variant %>
+  <%= render "form", variant: @variant %>
 
-<br>
+  <br>
+<%end%>
 
 <div>
   <%= link_to "Back to variants", variants_path, class: 'blue-link' %>

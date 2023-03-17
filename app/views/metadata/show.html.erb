@@ -1,9 +1,10 @@
-<p style="color: green"><%= notice %></p>
+ <p style="color: green"><%= notice %></p>
 
-<%= render @metadatum %>
+  <%= render @metadatum %>
 
-<%= link_to "Back to metadata", metadata_path, class: "blue-link" %>
-<br><br>
+  <%= link_to "Back to metadata", metadata_path, class: "blue-link" %>
+  <br><br>
+
 <%# only admins can able to edit and destroy the metadetum%>
 <%if user_signed_in? && current_user.is_admin %>
   <div>

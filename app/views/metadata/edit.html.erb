@@ -1,8 +1,10 @@
-<h1>Editing metadatum</h1>
+<%if user_signed_in? && current_user.is_admin %>
+  <h1>Editing metadatum</h1>
 
-<%= render "form", metadatum: @metadatum %>
+  <%= render "form", metadatum: @metadatum %>
 
-<br>
+  <br>
+<%end%>
 
 <div>
   <%= link_to "Show this metadatum", @metadatum, class: "blue-link" %> |
