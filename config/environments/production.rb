@@ -95,13 +95,13 @@ Rails.application.configure do
 
   #config for the devise production
 
-  config.action_mailer.default_url_options = { host: 'chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com',protocol: 'https'}
+  config.action_mailer.default_url_options = { host: 'chalo.digital',protocol: 'https'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
       port: 587,
-      domain: "gmail.com",
+      domain: "chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com",
       user_name: "khanshohaib400@gmail.com",
       password: "sduiyorvdyqvhvzc",
       authentication: 'plain',
