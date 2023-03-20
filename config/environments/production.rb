@@ -106,7 +106,7 @@ Rails.application.configure do
       password: "sduiyorvdyqvhvzc",
       authentication: 'plain',
       :ssl => true,
-      :tsl => true,
+      :tls => true,
       enable_starttls_auto: true
   }
 
