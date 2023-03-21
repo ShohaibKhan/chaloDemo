@@ -1,0 +1,95 @@
+<!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+<nav class="bg-gray-800">
+  <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="flex items-center px-2 lg:px-0">
+        <div class="flex-shrink-0 text-white">
+          <strong>Chalo</strong>
+        </div>
+        <div class="hidden lg:ml-6 lg:block">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="/" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">Home</a>
+            <a href="/cars" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Cars</a>
+            <a href="/variants" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Variants</a>
+            <a href="/metadata" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Waiting Periods</a>
+            <a href="mailto:divi@blueinsight.digital" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact Us</a>
+            <a href="whatsapp://send?text=Check out this page: <%= request.original_url %>" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Share to Whatsapp</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
+        <div class="w-full max-w-lg lg:max-w-xs">
+          <label for="search" class="sr-only">Search</label>
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <input id="search" name="search" class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Search" type="search">
+          </div>
+        </div>
+      </div>
+      
+      <div class="hidden lg:ml-4 lg:block">
+        <div class="flex items-center">
+          <div class="relative ml-4 flex-shrink-0">
+            <div>
+            <%if user_signed_in?%>
+              <button type="button" class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                <a href="/users/sign_out" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign Out              </a>
+              </button>
+            <%else%>
+              <button type="button" class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <a href="/users/sign_in" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-in</a >
+              <a href="/users/sign_up" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-up</a >
+              </button>
+            <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="lg:hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pt-2 pb-3">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Home</a>
+      <a href="/cars" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Cars</a>
+      <a href="/variants" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Variants</a>
+      <a href="whatsapp://send?text=Check out this page: <%= request.original_url %>" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Share to Whatsapp</a>
+      <a href="/metadata" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">metadata</a>
+      <a href="mailto:divi@blueinsight.digital" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact Us</a>
+    </div>
+    <div class="border-t border-gray-700 pt-4 pb-3">
+      <div class="flex items-center px-5">
+        <div class="flex">
+          <%if user_signed_in?%>
+          <a href="/users/sign_out" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-out</a > 
+          <%else%>
+          <a href="/users/sign_up" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-up</a >
+          <a href="/users/sign_in" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-in</a >
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<p class="bg-gray-800 text-green-400 text-center"><%= notice %></p>
+<p class="bg-gray-800 text-green-400 text-center"><%= alert %></p>

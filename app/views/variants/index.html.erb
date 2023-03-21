@@ -1,10 +1,28 @@
-<%if user_signed_in?%>
-  <%= search_form_for @q do |form| %>
-        <div class="form-group">
-          <%= form.text_field :variant_cont,class:"form-control",placeholder:"Search by variant" %>
-          <%= form.submit%>
-        </div>
-    <%end%>
+<div class="bg-gray-800 font-serif capitalize text-center content-center bg-cover bg-center bg-blend-multiply" style="background-image: url(https://images.unsplash.com/photo-1543465077-db45d34b88a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80);">
+<div class="container text-center">
+  <h1 class="font-bold text-4xl text-white font-serif">Variants</h1>
+
+<div class="flex flex-wrap mx-4">
+  <% @variants.each do |variant| %>
+    <div class="w-full sm:w-1/3 p-3">
+      <div class="container bg-white bg-opacity-10 my-3 py-3 outline-double rounded-md capitalize hover:scale-105 duration-300">
+        <dt class="text-lg font-bold bg-black text-white rounded-md">Variant of:</dt>
+        <dd class="mt-1 bg-stale-500 text-sm text-white"><%= variant.car.car_name %></dd>
+        <dt class="text-lg bg-black font-bold text-white rounded-md">Variant name:</dt>
+        <dd class="mt-1 bg-stale-500 text-sm text-white"><%= variant.variant %></dd>
+        <dt class="text-md bg-black text-white rounded-md">To view Variant details</dt>
+        <dd class="mt-1 bg-stale-500 text-lg text-white hover:text-blue-500"><%= link_to "Click Here", variant %></dd>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+  <button type="button" class="inline-flex w-1/8 mx-auto my-5 items-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+    <%= link_to "New variant", new_variant_path, class: 'blue-link' %>
+  </button>
+</div>
+
+<!--p style="color: green"><%= notice %></p>
 
   <p style="color: green"><%= notice %></p>
 
@@ -18,20 +36,8 @@
           <th>Variant</th>
           <th>View</th>
         </tr>
-      </thead>
-      <tbody class="bg-amber-100">
-        <% @variants.each do |variant| %>
-          <tr>
-            <td><%= variant.car.car_name %></td>
-            <td><%= variant.variant %></td>
-            <td><%= link_to "Show this Variant",  variant, class: 'blue-link' %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-<%end%>
-<%# only the admin user can able to add new variants%>
-<%if user_signed_in? && current_user.is_admin %>
-  <%= link_to "New Variant", new_variant_path, class: 'blue-link' %>
-<%end%>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New Variant", new_variant_path, class: 'blue-link' %-->

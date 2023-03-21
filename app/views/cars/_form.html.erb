@@ -1,6 +1,6 @@
 <%= form_with(model: car) do |form| %>
   <% if car.errors.any? %>
-    <div style="color: red">
+    <div class="bg-gray-800 text-red-400 text-center">
       <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
 
       <ul>
@@ -10,25 +10,26 @@
       </ul>
     </div>
   <% end %>
+  <div class="flex flex-col content-center text-center bg-gray-800 text-white">
 
   <div>
-    <%= form.label :car_name, style: "display: block" %>
-    <%= form.text_field :car_name %>
+    <%= form.label :car_name, class: "ml-px block pl-4 text-lg font-medium leading-6 " %>
+    <%= form.text_field :car_name , class: "block rounded-full w-1/3 mx-auto px-4 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder:"Car Name"%>
   </div>
 
   <div>
-    <%= form.label :brand, style: "display: block" %>
-    <%= form.collection_select :brand_id, Brand.all, :id, :name %>
+    <%= form.label :brand, class: "block text-lg font-medium leading-6 " %>
+  <%= form.collection_select :brand_id, Brand.all, :id, :name, { prompt: "Select a brand"} , { class: "block w-1/3 mx-auto px-4 py-1.5 appearance-none text-center rounded-full leading-tight focus:outline-none focus:shadow-outline-gray focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 bg-gray-100 border border-gray-300 shadow-sm sm:text-sm sm:leading-6 text-black" } %>
   </div>
 
   <div>
-    <%= form.label :launched, style: "display: block" %>
-    <%= form.check_box :launched %>
+    <%= form.label :launched, class: "select-none font-medium " %>
+    <%= form.check_box :launched ,class:"h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"%>
   </div>
 
   <div>
     <%= form.label :launch_date, style: "display: block" %>
-    <%= form.datetime_field :launch_date %>
+    <%= form.datetime_field :launch_date ,class: "block rounded-full w-1/3 mx-auto px-4 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
   </div>
 
 <!--  <div>-->
@@ -36,7 +37,8 @@
     <%#= form.number_field :car_id %>
 <!--  </div>-->
 
-  <div>
-    <%= form.submit class: "gray-btn"%>
-  </div>
+  <button type="button" class="inline-flex w-1/8 mx-auto mt-5 items-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+    <%= form.submit %>
+  </button>
 <% end %>
+</div>

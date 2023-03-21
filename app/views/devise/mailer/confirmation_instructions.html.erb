@@ -1,6 +1,5 @@
-<p> <b> Welcome to Chalo <b> <%= @email %>!</p>
+<p>Welcome <%= @email %>!</p>
 
 <p>You can confirm your account email through the link below:</p>
-<br>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>

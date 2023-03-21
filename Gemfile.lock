@@ -144,11 +144,11 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nokogiri (1.14.0-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.0-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.14.0-x86_64-linux)
-      racc (~> 1.4)
-    nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
     open-uri (0.3.0)
       stringio
@@ -237,7 +237,13 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    stringio (3.0.5)
+    stringio (3.0.4)
+    tailwindcss-rails (2.0.24-arm64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.24-x64-mingw-ucrt)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.24-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.1)
     time (0.2.1)
       date
@@ -267,6 +273,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    whatsapp-api (0.0.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.7)
@@ -299,10 +306,12 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
   web-console
   webdrivers
+  whatsapp-api (~> 0.0.1)
 
 RUBY VERSION
    ruby 3.2.0p0

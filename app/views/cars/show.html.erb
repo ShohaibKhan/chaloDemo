@@ -1,17 +1,1 @@
-<%if user_signed_in?%>
-  <p style="color: green"><%= notice %></p>
-
-  <%= render @car %>
-  <br>
-  <%= link_to "Back to cars", cars_path, class: "blue-link" %>
-  <br><br>
-<%end%>
-<%# only admins can able to edit and destroy the car%>
-<%if user_signed_in? && current_user.is_admin %>
-
-  <div>
-    <%= link_to "Edit this car", edit_car_path(@car), class: "blue-link" %>
-    <%= button_to "Destroy this car", @car, method: :delete, class: "gray-btn" %>
-  </div>
-
-<%end%> 
+<%= render @car %>

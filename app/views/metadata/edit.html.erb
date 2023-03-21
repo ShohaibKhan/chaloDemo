@@ -1,12 +1,12 @@
-<%if user_signed_in? && current_user.is_admin %>
-  <h1>Editing metadatum</h1>
+<div class="bg-gray-800 capitalize text-center content-center">
+<h1  class="font-bold text-4xl text-white font-serif">Editing Metadata</h1>
+<br>
+<%= render "form", metadatum: @metadatum %>
 
-  <%= render "form", metadatum: @metadatum %>
 
-  <br>
-<%end%>
-
-<div>
-  <%= link_to "Show this metadatum", @metadatum, class: "blue-link" %> |
-  <%= link_to "Back to metadata", metadata_path, class: "blue-link" %>
+ <div class="flex justify-center">
+  <button type="button" class="inline-flex w-1/8 mx-auto my-5 items-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+    <%= link_to "Back to Metadata", metadatum_path %>
+  </button> 
+ </div>
 </div>

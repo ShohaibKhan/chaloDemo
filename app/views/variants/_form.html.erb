@@ -1,7 +1,7 @@
 <%= form_with(model: variant) do |form| %>
   <% if variant.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(variant.errors.count, "error") %> prohibited this car from being saved:</h2>
+    <div class="bg-gray-800 text-red-400 text-center">
+      <h2><%= pluralize(car.errors.count, "error") %> prohibited this variant from being saved:</h2>
 
       <ul>
         <% variant.errors.each do |error| %>
@@ -10,18 +10,20 @@
       </ul>
     </div>
   <% end %>
+<div class="flex flex-col content-center text-center bg-gray-800 text-white">
 
   <div>
-    <%= form.label :variant, style: "display: block" %>
-    <%= form.text_field :variant %>
+    <%= form.label :variant, class: "ml-px block pl-4 text-lg font-medium leading-6 " %>
+    <%= form.text_field :variant, class: "block rounded-full w-1/3 mx-auto px-4 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6", placeholder:"Variant Name" %>
   </div>
 
   <div>
-    <%= form.label :car_id, style: "display: block" %>
-    <%= form.collection_select :car_id, Car.all, :id, :car_name %>
+    <%= form.label :car_id, class: "block text-lg font-medium leading-6 " %>
+    <%= form.collection_select :car_id, Car.all, :id, :car_name, { prompt: "Select a Car"} , { class: "block w-1/3 mx-auto px-4 py-1.5 appearance-none text-center rounded-full leading-tight focus:outline-none focus:shadow-outline-gray focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 bg-gray-100 border border-gray-300 shadow-sm sm:text-sm sm:leading-6 text-black" } %>
   </div>
 
-  <div>
-    <%= form.submit class: "gray-btn"%>
-  </div>
-<% end %>
+  <button type="button" class="inline-flex w-1/8 mx-auto mt-5 items-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+    <%= form.submit %>
+    </button>
+  <% end %>
+</div>

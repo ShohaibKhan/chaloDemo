@@ -86,3 +86,5 @@ gem 'devise',"~> 4.9.0"
 
 gem 'ransack' ,"~> 4.0.0"
 
+gem "whatsapp-api", "~> 0.0.1"
+gem "tailwindcss-rails", "~> 2.0"
