@@ -82,10 +82,7 @@ gem "csv", "~> 3.2"
 
 gem "open-uri", "~> 0.3.0"
 
-#Gem devise used for the authentication
 gem 'devise',"~> 4.9.0"
 
-#Ransack used for the implementation of search functionality
 gem 'ransack' ,"~> 4.0.0"
 
-gem 'actionmailer','~> 7.0.4.3'

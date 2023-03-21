@@ -7,4 +7,5 @@ class Car < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["car_name","launch_date"]
   end
+  
 end

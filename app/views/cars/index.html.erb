@@ -39,14 +39,14 @@
       </table>
     </div>
   </li>
-
-  <%# can make new car only if the signed in user is admin%>
-  <%if user_signed_in? && current_user.is_admin %>
-    <li class="py-4">
-      <%= link_to "New car", new_car_path, class: 'blue-link' %>
-    </li>
-  <%end%>
 <%end%>
+  <%# can make new car only if the signed in user is admin%>
+<%if user_signed_in? && current_user.is_admin %>
+  <li class="py-4">
+    <%= link_to "New car", new_car_path, class: 'blue-link' %>
+  </li>
+<%end%>
+
 
 
 

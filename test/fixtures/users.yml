@@ -6,7 +6,7 @@
 #
 one:
   fname: shoaib
-  sname: khan
+  lname: khan
   phno: '1234567890'
   email: shoaib@example.com
   encrypted_password: password
@@ -15,7 +15,7 @@ one:
 
 two:
   fname: sri
-  sname: nivas
+  lname: nivas
   phno: '0987654321'
   email: srinivas@example.com
   encrypted_password: password

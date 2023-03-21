@@ -16,9 +16,8 @@
     <header>
       <h1>chalo</h1>
       <p> plan for your next trip </p>
-     
+      
       <%= alert%>
-
        <%# Show this if user is signed in %>
       <%if user_signed_in?%>
         <%= link_to 'Sign Out',destroy_user_session_path  %>
@@ -35,15 +34,17 @@
         <%= yield %>
       </ul>
     </main>
+
+    <footer>
     
-     <footer>
-    <%# Show this only if user is signed%>
+      <%# Show this only if user is signed%>
       <% if user_signed_in?%>
         <p><%= link_to "Cars", cars_path, class: 'blue-link' %> | <%= link_to "Variants", variants_path, class: 'blue-link' %> | <%= link_to "Waiting Periods", metadata_path, class: 'blue-link' %></p>
       <%end%>
       <p>made by <a href="https://github.com/blueinsightdigital">@blueinsightdigital</a></p>
       <div id="wcb" class="carbonbadge wcb-d"></div>
       <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+
     </footer>
   </body>
 

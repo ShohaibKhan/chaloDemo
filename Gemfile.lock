@@ -144,11 +144,11 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
+    nokogiri (1.14.0-x64-mingw-ucrt)
+      racc (~> 1.4)
+    nokogiri (1.14.0-x86_64-linux)
+      racc (~> 1.4)
     nokogiri (1.14.2-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.14.2-x64-mingw-ucrt)
-      racc (~> 1.4)
-    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     open-uri (0.3.0)
       stringio
@@ -277,7 +277,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  actionmailer (~> 7.0.4.3)
   bcrypt (~> 3.1.7)
   bootsnap
   brakeman (~> 5.4)

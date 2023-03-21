@@ -29,7 +29,7 @@ Rails.application.configure do
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed. default is false.
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
@@ -62,7 +62,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "yourmove_production"
+  # config.active_job.queue_name_prefix = "user_auth_debug_production"
 
   config.action_mailer.perform_caching = false
 
@@ -93,18 +93,16 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  #config for the devise production
-
-  config.action_mailer.default_url_options = { host: 'chalo.digital',protocol: 'https'}
+  config.action_mailer.default_url_options = { host: 'chalo.digital' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-      address: "smtp.gmail.com",
-      port: 587,
-      domain: "chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com",
-      user_name: "khanshohaib400@gmail.com",
-      password: "sduiyorvdyqvhvzc",
-      authentication: 'plain',
-      enable_starttls_auto: true
-  }
+    address: "smtp.mailgun.org",
+    port: 587,
+    user_name: "postmaster@mg.chalo.digital",
+    password: "c90d6be52267cdda67aa680b6eb21c2d-30344472-38476c5b",
+    authentication: 'plain',
+    enable_starttls_auto: true
+  } 
+
 end

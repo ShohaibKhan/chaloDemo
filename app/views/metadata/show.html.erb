@@ -1,7 +1,6 @@
  <p style="color: green"><%= notice %></p>
 
   <%= render @metadatum %>
-
   <%= link_to "Back to metadata", metadata_path, class: "blue-link" %>
   <br><br>
 
@@ -9,7 +8,6 @@
 <%if user_signed_in? && current_user.is_admin %>
   <div>
     <%= link_to "Edit this metadatum", edit_metadatum_path(@metadatum), class: "blue-link" %> 
-
     <%= button_to "Destroy this metadatum", @metadatum, method: :delete, class: "gray-btn" %>
   </div>
 <%end%>

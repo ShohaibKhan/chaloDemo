@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '1e3ba5a302baf3356bc255fb8b7bbf7799515172a7e8791effe76b3b2e3db450094a4b0e9328c62171834a02b17caab02760225c2c543e428d2456e8106c8835'
+  # config.secret_key = '27533a1f2683052c42ad150ca4eba73d3e35276cf351e2cc66ded560cc365783107a88b435d983401c0903073732625e22fc92b1142de115e05704a96a2a64b3'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,12 +24,10 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'Chalo'
+  config.mailer_sender = 'Chalo@digital.com'
 
   # Configure the class responsible to send e-mails.
-  config.mailer = 'Devise::Mailer'
-
- 
+  # config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
@@ -48,7 +46,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  config.authentication_keys = [:email]
+  # config.authentication_keys = [:email]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -128,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '50327f9982e28c362c8c8656b38167ec30f8819e6654a5bdbe64b1a5ff964f9a0dfff0aa610072122a73e50631601ff8bec824b794da9ddb5c79f51695b54626'
+  # config.pepper = 'c233b901001c7f23235e2fd87892c1ab2f13a06093bf4eaace9817a3da185c4cd595b15dba9721de804285683d73aa959529f930323af5a942f22b3bc4eaaf9f'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -158,7 +156,7 @@ Devise.setup do |config|
   # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
-# unconfirmed_email column, and copied to email column on successful confirmation.
+  # unconfirmed_email column, and copied to email column on successful confirmation.
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
@@ -312,6 +310,4 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-
-  
 end
