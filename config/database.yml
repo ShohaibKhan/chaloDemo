@@ -25,7 +25,11 @@ development:
   <<: *default
   database: chalo_development
   username: postgres
-  password: 
+  #password:
+
+  # When developing locally with Homebrew, use the following configuration:
+  # username: <system-username>
+  # password: abc123 # or no password, by default
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,6 +66,10 @@ test:
   database: chalo_test
   username: chalo
   password: abc123
+
+# When testing locally with Homebrew, use the following configuration:
+# username: <system-username>
+# password: abc123 # or no password, by default
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
