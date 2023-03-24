@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_car, only: %i[ show edit update destroy ]
   helper VariantsHelper
 

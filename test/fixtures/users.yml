@@ -19,5 +19,5 @@ two:
   phno: '0987654321'
   email: srinivas@example.com
   encrypted_password: password
-  is_admin: false
+  is_admin: true
   

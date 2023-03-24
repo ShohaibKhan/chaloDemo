@@ -1,4 +1,5 @@
 class MetadataController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_metadatum, only: %i[ show edit update destroy ]
 
   # GET /metadata or /metadata.json
