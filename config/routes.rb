@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dealerships/show'
   devise_for :users
   resources :metadata
   resources :variants

@@ -11,4 +11,6 @@ class User < ApplicationRecord
   def check_for_admin
     self.is_admin = email.include?("@blueinsight.digital")
   end
+
+  
 end

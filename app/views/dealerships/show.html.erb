@@ -1,0 +1,19 @@
+<div class="bg-gray-800 font-serif capitalize text-center content-center bg-cover bg-center bg-blend-multiply" style="background-image: url(https://images.unsplash.com/photo-1543465077-db45d34b88a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80);">
+<div class="container text-center">
+  <h1 class="font-bold text-4xl text-white font-serif">Dealers need to be Verified</h1>
+
+<div class="flex flex-wrap mx-4">
+  <% @dealers.each do |dealer| %>
+    <div class="w-full sm:w-1/3 p-3">
+      <div class="container bg-white bg-opacity-10 my-3 py-3 outline-double rounded-md capitalize hover:scale-105 duration-300">
+        <dt class="text-lg font-bold bg-black text-white rounded-md">dealer name:</dt>
+        <dd class="mt-1 bg-stale-500 text-sm text-white"><%= dealer.fname+" "+dealer.sname %></dd>
+        <dt class="text-lg bg-black font-bold text-white rounded-md">dealer Email:</dt>
+        <dd class="mt-1 bg-stale-500 text-sm text-white"><%= dealer.email %></dd>
+
+        <dt class="text-lg bg-black font-bold text-white rounded-md">dealer phone:</dt>
+        <dd class="mt-1 bg-stale-500 text-sm text-white"><%= dealer.phno %></dd>
+      </div>
+    </div>
+  <% end %>
+</div>
