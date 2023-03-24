@@ -26,6 +26,13 @@
             <a href="/cars" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Cars</a>
             <a href="/variants" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Variants</a>
             <a href="/metadata" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Waiting Periods</a>
+
+            <%if user_signed_in? && current_user.is_admin%>
+              <div class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">
+                <%= link_to "manage_dealers","/dealerships/manage_dealers"%>
+              </div>
+            <%end%>
+
             <a href="mailto:divi@blueinsight.digital" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact Us</a>
             <a href="whatsapp://send?text=Check out this page: <%= request.original_url %>" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Share to Whatsapp</a>
           </div>
