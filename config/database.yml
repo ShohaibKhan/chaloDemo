@@ -25,7 +25,7 @@ development:
   <<: *default
   database: chalo_development
   username: postgres
-  #password:
+  password: Khan2khan@@
 
   # When developing locally with Homebrew, use the following configuration:
   # username: <system-username>
