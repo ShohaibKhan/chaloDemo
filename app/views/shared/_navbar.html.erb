@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
+      <%# <div class="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
         <div class="w-full max-w-lg lg:max-w-xs">
           <label for="search" class="sr-only">Search</label>
           <div class="relative">
@@ -43,7 +43,7 @@
             <input id="search" name="search" class="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Search" type="search">
           </div>
         </div>
-      </div>
+      </div> %>
       
       <div class="hidden lg:ml-4 lg:block">
         <div class="flex items-center">
@@ -63,33 +63,45 @@
           </div>
         </div>
       </div>
-    </div>
+      <div class="lg:hidden" id="mobile-menu">
+        <div class="relative inline-block">
+          <button class="px-4 py-2 text-sm font-medium text-gray-600 bg-gray-800 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 dropdown-toggle">
+          <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          </button>
+        </div>
+      </div>
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="lg:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pt-2 pb-3">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+
+    <div class="dropdown-menu hidden lg:hidden ">
       <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Home</a>
       <a href="/cars" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Cars</a>
       <a href="/variants" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Variants</a>
       <a href="whatsapp://send?text=Check out this page: <%= request.original_url %>" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Share to Whatsapp</a>
       <a href="/metadata" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">metadata</a>
       <a href="mailto:divi@blueinsight.digital" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact Us</a>
-    </div>
-    <div class="border-t border-gray-700 pt-4 pb-3">
-      <div class="flex items-center px-5">
-        <div class="flex">
-          <%if user_signed_in?%>
-          <a href="/users/sign_out" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-out</a > 
-          <%else%>
-          <a href="/users/sign_up" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-up</a >
-          <a href="/users/sign_in" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-in</a >
-          <%end%>
-        </div>
-      </div>
-    </div>
-  </div>
+      <%if user_signed_in?%>
+        <a href="/users/sign_out" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-out</a > 
+      <%else%>
+        <a href="/users/sign_up" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-up</a >
+        <a href="/users/sign_in" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Sign-in</a >
+      <%end%>
+    
+</div>
 </nav>
 <p class="bg-gray-800 text-green-400 text-center"><%= notice %></p>
 <p class="bg-gray-800 text-green-400 text-center"><%= alert %></p>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $(".dropdown-toggle").click(function() {
+      $(".dropdown-menu").toggleClass("hidden");
+    });
+  });
+  </script>
+  

@@ -47,13 +47,17 @@
     </dl>
   </div>
   <div class="flex">
+  <%if current_user.is_admin==true %>
   <button type="button" class="inline-flex w-1/8 mx-auto my-5 items-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
     <%= link_to "Edit this variant", edit_metadatum_path(@metadatum) %>
   </button>
+  <% end%>
   <button type="button" class="inline-flex w-1/8 mx-auto my-5 items-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
     <%= link_to "Back to variants", metadatum_path %>
   </button>
   </div>
+  <%if current_user.is_admin==true %>
   <div class="flex justify-center">
   <%= button_to "Destroy this variant", @metadata, method: :delete, class: "mb-5 align-center gap-x-2 rounded-md bg-indigo-600 py-2.5 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+  <%end%>
 </div>
