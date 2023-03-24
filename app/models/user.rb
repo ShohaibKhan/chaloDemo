@@ -21,5 +21,5 @@ class User < ApplicationRecord
       self.username = "user0000" + self.id.to_s
     end
   end
-  
+
 end
