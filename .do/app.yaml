@@ -15,7 +15,7 @@ domains:
 envs:
   - key: CHALO_APP_DATABASE_URL
     scope: RUN_AND_BUILD_TIME
-    value: postgresql://pgdb:AVNS_aQ65wQ05Xs2GiCL50hB@chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com:25060/chalo_production?sslmode=require
+    value: postgresql://pgdb:AVNS_aQ65wQ05Xs2GiCL50hB@private-chalo-blr1-a-do-user-12742890-0.b.db.ondigitalocean.com:25060/chalo_production?sslmode=require
   - key: RAILS_MASTER_KEY
     scope: RUN_AND_BUILD_TIME
     value: ba3b97ff21dcf1d4536b380f280e0c6e
