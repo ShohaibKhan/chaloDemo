@@ -10,19 +10,19 @@
     </div>
     <div class="container w-1/3 mx-auto my-4">
       <%= f.label :"password  (leave empty if no changes) ",class:"block text-sm font-medium leading-6 text-white" %>
-      <%= f.password_field :password, autofocus: true, autocomplete: "email",class: "block w-full pl-3 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      <%= f.password_field :password, class: "block w-full pl-3 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
     </div>
     <div class="container w-1/3 mx-auto my-4">
       <%= f.label :password_confirmation,class:"block text-sm font-medium leading-6 text-white" %>
-      <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "email",class: "block w-full pl-3 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      <%= f.password_field :password_confirmation, class: "block w-full pl-3 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
     </div>
     <div class="container w-1/3 mx-auto my-4">
       <%= f.label :current_password,class:"block text-sm font-medium leading-6 text-white" %>
-      <%= f.password_field :current_password, autofocus: true, autocomplete: "email",class: "block w-full pl-3 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      <%= f.password_field :current_password, autocomplete: "email",class: "block w-full pl-3 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
     </div>
     <div class="container w-1/3 mx-auto my-4">
       <%= f.label :username,class:"block text-sm font-medium leading-6 text-white" %>
-      <%= f.text_field :username, autofocus: true, autocomplete: "email",class: "block w-full pl-3 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
+      <%= f.text_field :username,class: "block w-full pl-3 rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" %>
     </div>
     <div class="actions w-1/6 mx-auto mt-4 mb-12">
     <%= f.submit "Update" ,class: "flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"%>
