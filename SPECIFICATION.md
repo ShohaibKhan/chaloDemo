@@ -42,9 +42,9 @@ I want to make Chalo where we can see waiting periods of various cars, so that
 
 ## How
 
-- [ ]  User Accounts
-    - [ ]  We need to support a **User**, **Dealer** and **Administrator** as granular roles with increased roles and privileges.
-    - [ ]  We need to support usernames for User Accounts
+- [ x]  User Accounts
+    - [ x]  We need to support a **User**, **Dealer** and **Administrator** as granular roles with increased roles and privileges.
+    - [ x]  We need to support usernames for User Accounts
 - [ ]  Data Capture
     - [ ]  We are capturing waiting period data at a variant and pin code level from **Administrator**
     - [ ]  We are capturing views on the site from authenticated users, and using it to come up with a machine learning model to identify **potential buyers** to surface in the feed.
@@ -52,12 +52,12 @@ I want to make Chalo where we can see waiting periods of various cars, so that
     - [ ]  We are showing the top 5 cars with maximum waiting period, top 5 cars with least waiting period, and top 5 manufacturer brands with highest waiting periods globally
     - [ ]  Individual pages contain more specific information and knobs for authenticated users.
     - [ ]  The feed reveals overall activity on the site **as a potential buyers representation**, which is present on the home page through a section of a segment, but is linked to it’s own page with all details
-- [ ]  Walled Garden
+- [ x]  Walled Garden
     - [ ]  To fit the Data Capture and Data Reveal Requirements
 - [ ]  Final pieces
     - [ ]  Search functionality to surface all relevant information
-    - [ ]  Dealer Phone Verification
-        - [ ]  Our team will verify the Dealer’s legitimacy over a phone call and activate the account via a toggle that’s visible to **Administrators**
+    - [ x]  Dealer Phone Verification
+        - [ x]  Our team will verify the Dealer’s legitimacy over a phone call and activate the account via a toggle that’s visible to **Administrators**
     - [ ]  Dealer Credits
         - [ ]  Each dealer can access 100 credits per week for free, and more can be purchased from us wholesale. Depending on the intent-to-buy model, a **new potential buyer** can be worth 5-25 credits
 
