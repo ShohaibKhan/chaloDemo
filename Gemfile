@@ -88,3 +88,4 @@ gem 'ransack' ,"~> 4.0.0"
 
 gem "whatsapp-api", "~> 0.0.1"
 gem "tailwindcss-rails", "~> 2.0"
+gem "random_name_generator","~> 2.0.1"

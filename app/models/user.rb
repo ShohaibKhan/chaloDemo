@@ -4,22 +4,20 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   
-  before_save :check_for_admin
-  before_save :set_user_name
-  validates :username, uniqueness: true
+  before_save :check_for_admin,:add_username
 
 
   private
+
+  def add_username
+    rand=RandomNameGenerator.new
+    self.username=rand.compose(4)
+  end
        
   def check_for_admin
     self.is_admin = email.include?("@blueinsight.digital")
     self.is_admin = email.include?(".bid@gmail.com")
   end
 
-  def set_user_name
-    if self.username.nil?
-      self.username = "user0000" + self.id.to_s
-    end
-  end
 
 end
