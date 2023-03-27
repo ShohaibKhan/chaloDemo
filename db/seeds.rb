@@ -20,16 +20,16 @@ require 'open-uri'
 
 Pincode.destroy_all
 
-csv_text = URI.open('https://chalo-assets.sgp1.cdn.digitaloceanspaces.com/assets/data/all_india_PO_list_without_APS_offices_ver2_lat_long_PINCODE_only.csv')
-csv = CSV.parse(csv_text, :headers => true)
-if Rails.env.production?
-  # csv.each do |row|
-  csv.first(100).each do |row|
-    Pincode.create!(row.to_hash)
-  end
-else
-  csv.first(100).each do |row|
-    Pincode.create!(row.to_hash)
-  end
-end
+# csv_text = URI.open('https://chalo-assets.sgp1.cdn.digitaloceanspaces.com/assets/data/all_india_PO_list_without_APS_offices_ver2_lat_long_PINCODE_only.csv')
+# csv = CSV.parse(csv_text, :headers => true)
+# if Rails.env.production?
+#   # csv.each do |row|
+#   csv.first(100).each do |row|
+#     Pincode.create!(row.to_hash)
+#   end
+# else
+#   csv.first(100).each do |row|
+#     Pincode.create!(row.to_hash)
+#   end
+# end
 
