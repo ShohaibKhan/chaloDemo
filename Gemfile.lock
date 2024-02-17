@@ -93,7 +93,7 @@ GEM
     cssbundling-rails (1.1.2)
       railties (>= 6.0.0)
     csv (3.2.6)
-    date (3.3.3)
+    date (3.3.4)
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
@@ -150,7 +150,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.14.0-x86_64-linux)
       racc (~> 1.4)
-    open-uri (0.3.0)
+    open-uri (0.4.1)
       stringio
       time
       uri
@@ -238,7 +238,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    stringio (3.0.4)
+    stringio (3.1.0)
     tailwindcss-rails (2.0.24-arm64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.24-x64-mingw-ucrt)
@@ -246,7 +246,7 @@ GEM
     tailwindcss-rails (2.0.24-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.1)
-    time (0.2.1)
+    time (0.3.0)
       date
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -258,7 +258,7 @@ GEM
     tzinfo-data (1.2022.7)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
-    uri (0.12.0)
+    uri (0.13.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -297,7 +297,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jsbundling-rails (~> 1.1)
-  open-uri (~> 0.3.0)
+  open-uri (~> 0.4.1)
   pg (~> 1.1)
   puma (~> 6.0)
   rails (~> 7.0.4)
