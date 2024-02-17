@@ -80,7 +80,7 @@ gem "cssbundling-rails", "~> 1.1"
 
 gem "csv", "~> 3.2"
 
-gem "open-uri", "~> 0.3.0"
+gem "open-uri", "~> 0.4.1"
 
 gem 'devise',"~> 4.9.0"
 
