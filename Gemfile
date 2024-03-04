@@ -73,7 +73,7 @@ end
 
 gem "bundler-audit", "~> 0.9.1"
 gem "brakeman", "~> 5.4"
-gem "rubocop", "~> 1.43"
+gem "rubocop", "~> 1.61"
 
 gem "jsbundling-rails", "~> 1.1"
 gem "cssbundling-rails", "~> 1.1"
